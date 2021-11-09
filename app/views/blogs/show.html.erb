@@ -3,3 +3,7 @@
 <p><%= @blog.title %></p>
 <h4>本文</h4>
 <p><%= @blog.body %></p>
+<h4>画像</h4>
+<%= attachment_image_tag @blog, :image, :fill, 300, 300, format: 'jpeg' %>
+<%= link_to "編集", edit_blog_path(@blog.id) %>
+<%= link_to "削除", destroy_blog_path(@blog.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
